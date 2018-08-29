@@ -1,12 +1,43 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      My Notes Ionic 4
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+
+  <h5>1. Dynamic List</h5>
+  <p> data from TypeScript file are presented. <br> a for loop has been used with <strong>Interpolation</strong> </p>
+  <ion-list>
+    <button (click)="handleClick(employee)" ion-item *ngFor="let employee of employees">
+      <ion-avatar item-left>
+        <img src="{{ employee.picture }}">
+      </ion-avatar>
+      <h2> {{ employee.name }} </h2>
+      <p> Some informatoin <strong> {{ employee.title }} </strong>  </p>
+    </button>
+  </ion-list>
+
+  <h5>2. Data binding</h5>
+  <p> data can be saved to page from user input</p>
+  <ion-list>
+    <ion-item>
+      <ion-label> Username</ion-label>
+      <ion-input [(ngModel)]="username" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+  <button (click)="submitUsername()" ion-button>Save</button>
+
+  <h5>3. Passing Data between Pages </h5>
+ <ion-buttons >
+ <button ion-button (click)="launchSecondPage()" >   Second page </button>
+ </ion-buttons>
+
+
+
   The world is your oyster.
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
